@@ -1,0 +1,16 @@
+<h2>Add a new book</h2>
+<form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value="Save"/>
+</form>
+
+<h2>List of books</h2>
+<ul>
+    {% for book in books %}
+    {% if book.count > 0 %}
+    <p> <a href="/books/{{book.id}}">{{ book.title }}</a> ({{ book.count }} available)</p>
+    {% else %}
+    <p> <a href="/books/{{book.id}}">{{ book.title }}</a> (Out of stock)</p>
+    {% endif %}
+    {% endfor %}
+</ul>

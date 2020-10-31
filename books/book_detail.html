@@ -1,0 +1,9 @@
+<h2>Book Details</h2> 
+
+<form method="GET">
+    <label for="title">title</label>
+    <input id="title" type="text" value="{{ book.title }}"></input>
+    <input id="count" type="number" value="{{ book.count }}" min="0"></input>
+    <button type="submit" value="Click" name="update">Update</button>
+    <button type="submit" value="Click" name="delete">Delete</button>
+</form>
